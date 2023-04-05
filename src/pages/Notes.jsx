@@ -34,7 +34,7 @@ const Notes = ({dark, setDark, notes}) => {
           </div> 
           <div className='flex w-full justify-between'>
              <button className='px-4' onClick={() => setDark(!dark)}>{!dark ? <Moon size={38} /> : <Sun size={32}/>}</button>
-             <Link to='/create-note'><button className='bg-transparent outline-none border-[2.5px] border-[#291720] my-2 mx-2 rounded-xl hover:bg-[#fb8b24]'><Plus size={46} color='#291720' weight='bold'/></button></Link>
+             <Link to='/create-note'><button className='bg-transparent outline-none border-[2.5px] border-[#291720] my-2 mx-4 rounded-xl hover:bg-[#fb8b24]'><Plus size={46} color='#291720' weight='bold'/></button></Link>
           </div>
       </div>
    	)

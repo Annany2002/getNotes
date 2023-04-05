@@ -38,17 +38,15 @@ const Edit = ({notes, setNotes}) => {
 
    return (
    	<div className='flex flex-col max-w-[800px] min-h-screen h-full'>
-       <div className='flex my-2 mx-2 justify-between'>
-          <Link to='/'><CaretCircleLeft size={36} color="#291720" weight="fill" /></Link>
+       <div className='flex mt-3 mb-4 mx-2 justify-between'>
+          <Link to='/'><CaretCircleLeft size={36} color="black" weight="fill" /></Link>
+          <button className='tracking-wider border-2 border-black text-xl rounded-xl font-bold px-4 py-1' onClick={handleForm}>Save</button>
           <button onClick={handleDelete}><Trash size={36} /></button>
        </div>  
        <form className='w-full' onSubmit={handleForm}>
           <input className='w-full outline-none rounded-t-xl bg-transparent font-bold text-3xl px-2' type='text' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Title' autoFocus/>
             <textarea className='tracking-wide mt-[1px] mb-2 outline-none w-full px-2 max-h-full min-h-screen rounded-b-xl focus:border-2 focus:border-gray-900' placeholder="Note Details" value={details} onChange ={(e) => setDetails(e.target.value)}></textarea>
        </form>
-       <div className='text-center my-2'>
-         <button className='tracking-wider border-2 border-gray-900 text-xl rounded-xl font-bold px-4 py-1' onClick={handleForm}>Save</button>
-       </div>
       </div>
    	)
 }

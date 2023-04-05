@@ -7,7 +7,6 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import {useState, useEffect} from 'react';
 
 const App = () => {
-  const [dark, setDark] = useState(false);
   const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes')) || []);
 
   useEffect(() => {
@@ -15,12 +14,11 @@ const App = () => {
   },[notes])
 
   return (
-    <div className = {dark ? 'dark' : ''}>
-      <div className = 'w-full h-full flex flex-col min-h-screen items-center bg-myWhite dark:bg-[#291720]'>
+      <div className = 'w-full h-full flex flex-col min-h-screen items-center bg-myWhite'>
        <BrowserRouter> 
         <Routes>
           <Route path ='/' 
-           element = {<Notes notes={notes} dark = {dark} setDark={setDark}/>}/>
+           element = {<Notes notes={notes}/>}/>
           <Route path ='/create-note' 
               element = {<Create setNotes={setNotes}/>} />
           <Route path ='/edit-note/:id' 
@@ -28,7 +26,6 @@ const App = () => {
         </Routes>
        </BrowserRouter>
       </div>
-    </div>
     )
 }
 export default App

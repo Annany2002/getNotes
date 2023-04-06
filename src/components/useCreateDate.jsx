@@ -1,5 +1,9 @@
+import { formatRelative, subDays } from 'date-fns';
+
 const useCreateDate = () => {
-	const dateObj = new Date();
+	const date = formatRelative(subDays(new Date(), 0), new Date());
+	return date
+    /* const dateObj = new Date();
 	const month = dateObj.getMonth();
 	let monthName;
 	switch(month) {
@@ -29,6 +33,6 @@ const useCreateDate = () => {
 	 	break;
 	}
 	const date = `${monthName} ${dateObj.getDate()}, ${dateObj.getFullYear()}[${dateObj.getHours()}:${dateObj.getMinutes()}]`;
-	return date
+	return date */
 }
 export default useCreateDate;

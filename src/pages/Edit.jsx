@@ -2,6 +2,7 @@ import {Trash, CaretCircleLeft} from '@phosphor-icons/react'
 import {Link, useParams, useNavigate} from 'react-router-dom'
 import {useState} from 'react'
 import useCreateDate from '../components/useCreateDate'
+import {motion} from 'framer-motion'
 
 const Edit = ({notes, setNotes}) => {
    const {id} = useParams();
@@ -45,7 +46,7 @@ const Edit = ({notes, setNotes}) => {
        </div>  
        <form className='w-full' onSubmit={handleForm}>
           <input className='w-full outline-none rounded-t-xl bg-transparent font-bold text-3xl px-2' type='text' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Title' autoFocus/>
-            <textarea className='tracking-wide mt-[1px] mb-2 outline-none w-full px-2 max-h-full min-h-screen rounded-b-xl focus:border-2 focus:border-gray-900' placeholder="Note Details" value={details} onChange ={(e) => setDetails(e.target.value)}></textarea>
+            <textarea className='tracking-wide mt-[1px] mb-2 outline-none w-full px-2 min-h-[650px] rounded-b-xl focus:border-2 focus:border-[#291720]' placeholder="Note Details" value={details} onChange ={(e) => setDetails(e.target.value)}></textarea>
        </form>
       </div>
    	)
